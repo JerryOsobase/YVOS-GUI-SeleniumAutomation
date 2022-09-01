@@ -105,8 +105,6 @@ public class BusinessAddressTest extends base{
 		List<WebElement> allOptions = lcaDropdown.getOptions();
 		List<String> originalList= allOptions.stream().map(a->a.getText()).collect(Collectors.toList());
 		List<String> sortedList= allOptions.stream().map(a->a.getText()).sorted().collect(Collectors.toList());
-		System.out.println(originalList);
-		System.out.println(sortedList);
 		Assert.assertEquals(originalList, sortedList);
 		
 	}

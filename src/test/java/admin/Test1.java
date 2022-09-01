@@ -1,16 +1,31 @@
 package admin;
 
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -222,13 +237,40 @@ public class Test1 extends base{
 	}*/
 	
 	@Test
-	public void sjfie() {
-		System.out.println("boy boy");
+	public void sjfie() throws IOException, InterruptedException {
+		int[] arr = {5,10,6};
+		
+		int totalAccounts = 0;
+		
+		int loanTypeCount = arr.length;
+		
+		for(int q=0; q<arr.length; q++) {
+			totalAccounts += arr[q];
 		}
+		
+		if(totalAccounts> 20 || loanTypeCount >= 4){
+			System.out.println("A");
+		}
+		else if (totalAccounts> 10 || loanTypeCount == 3) {
+			System.out.println("B");
+				}
+		else if (totalAccounts>= 5 || loanTypeCount == 2){
+			System.out.println("C");
+				}
+		else if (totalAccounts > 0 || loanTypeCount == 1){
+			System.out.println("D");
+				}
+		else{
+					System.out.println("null");
+				}
+				}
+	
+		}
+
 	
 	
 
-	}
+	
 
 
 

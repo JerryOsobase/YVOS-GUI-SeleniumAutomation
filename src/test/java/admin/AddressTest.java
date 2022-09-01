@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -30,6 +31,8 @@ public class AddressTest extends base{
 		driver= InitializeBrowser();
 		driver.get(prop.getProperty("AdminOpUrl"));
 		driver.manage().window().maximize();
+		Dimension newDimension = new Dimension(800, 600);
+		driver.manage().window().setSize(newDimension);
 	}
 	
 	@Test(priority=1, dataProvider="mergedData", dataProviderClass=AdminLoginTest.class)
