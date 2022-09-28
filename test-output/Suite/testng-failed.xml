@@ -4,66 +4,69 @@
   <listeners>
     <listener class-name="listeners.Listeners"/>
   </listeners>
-  <test thread-count="5" name="Testing Agent Portal(failed)">
+  <test thread-count="5" name="Testing Operator Portal(failed)">
     <classes>
-      <class name="agent.FormPreviewTest">
-        <methods>
-          <include name="terminate"/>
-          <include name="initialize"/>
-          <include name="ValidateBusinessAddressEditButton"/>
-        </methods>
-      </class> <!-- agent.FormPreviewTest -->
-    </classes>
-  </test> <!-- Testing Agent Portal(failed) -->
-  <test thread-count="5" name="Testing Admin Portal(failed)">
-    <classes>
-      <class name="admin.AuditLogTest">
-        <methods>
-          <include name="terminate"/>
-          <include name="initialize"/>
-          <include name="ValidateAuditLogCardResponse"/>
-        </methods>
-      </class> <!-- admin.AuditLogTest -->
-      <class name="admin.CompaniesTest">
-        <methods>
-          <include name="EmptyPhoneNumberField" invocation-numbers="0"/>
-          <include name="ValidateExistingEmailInvite"/>
-          <include name="EmptyAdminFirstNameField" invocation-numbers="0"/>
-          <include name="ValidateActiveCompanyStatus"/>
-          <include name="EmptyAdminLastNameField" invocation-numbers="0"/>
-          <include name="SuccessfulCompanyInvite" invocation-numbers="0"/>
-          <include name="ValidateInvitedCompanyStatus"/>
-          <include name="initialize"/>
-          <include name="terminate"/>
-        </methods>
-      </class> <!-- admin.CompaniesTest -->
-      <class name="admin.ProfileTest">
-        <methods>
-          <include name="terminate"/>
-          <include name="initialize"/>
-          <include name="ValidatePasswordTips"/>
-          <include name="ValidateConFirmPasswordField"/>
-        </methods>
-      </class> <!-- admin.ProfileTest -->
-      <class name="admin.CouponTest">
-        <methods>
-          <include name="initialize"/>
-          <include name="terminate"/>
-          <include name="ValidateClearMultipleList"/>
-          <include name="ValidateMultipleCouponFilter"/>
-        </methods>
-      </class> <!-- admin.CouponTest -->
       <class name="admin.UsersTest">
         <methods>
           <include name="ValidateDeactivateUser"/>
           <include name="ValidateReactivateUser"/>
-          <include name="ValidateDuplicateSuperAdminResponse" invocation-numbers="1"/>
           <include name="ValidateUserSearch" invocation-numbers="0 1"/>
           <include name="ValidateInvitedUserStatus"/>
           <include name="initialize"/>
           <include name="terminate"/>
+          <include name="SuccessfulUserInvite" invocation-numbers="0"/>
         </methods>
       </class> <!-- admin.UsersTest -->
+      <class name="operator.IdentityTest">
+        <methods>
+          <include name="terminate"/>
+          <include name="ValidateIdentityPage" invocation-numbers="0"/>
+          <include name="initialize"/>
+          <include name="ValidateServiceDownLGAFilter" invocation-numbers="0"/>
+          <include name="ValidateServiceDownStatusField"/>
+          <include name="ValidateIdentityListHeader"/>
+          <include name="ValidateClearServiceDownList"/>
+        </methods>
+      </class> <!-- operator.IdentityTest -->
+      <class name="operator.CouponTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="ValidateSingleCouponFilter"/>
+          <include name="terminate"/>
+          <include name="SuccessfulMultipleCouponRequestOnline"/>
+          <include name="ValidateClearSingleList"/>
+          <include name="ValidateGeneratedCouponList"/>
+          <include name="ValidateClearMultipleList"/>
+          <include name="SuccessfulSingleCouponRequestOnline"/>
+          <include name="ValidateMultipleCouponFilter"/>
+        </methods>
+      </class> <!-- operator.CouponTest -->
+      <class name="operator.AdminLoginTest">
+        <methods>
+          <include name="ValidEmailAddress" invocation-numbers="0"/>
+          <include name="initialize"/>
+          <include name="terminate"/>
+          <include name="ValidateLogout"/>
+          <include name="ValidateSuccessfulAdminLogin"/>
+        </methods>
+      </class> <!-- operator.AdminLoginTest -->
+      <class name="operator.ProfileTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="InvalidCurrentPassword" invocation-numbers="0 1"/>
+          <include name="ValidateLastNameEdit"/>
+          <include name="ValidateNewPasswordMatch" invocation-numbers="0"/>
+          <include name="ValidateProfileInformation"/>
+          <include name="ValidateConFirmPasswordField"/>
+          <include name="ValidateProfilePage" invocation-numbers="0"/>
+          <include name="ValidateProfileImageUpload"/>
+          <include name="ValidatePasswordTips"/>
+          <include name="EmptyCurrentPasswordField"/>
+          <include name="ValidateFirstNameEdit"/>
+          <include name="ValidatePhoneNumberEdit"/>
+          <include name="terminate"/>
+        </methods>
+      </class> <!-- operator.ProfileTest -->
     </classes>
-  </test> <!-- Testing Admin Portal(failed) -->
+  </test> <!-- Testing Operator Portal(failed) -->
 </suite> <!-- Failed suite [Suite] -->

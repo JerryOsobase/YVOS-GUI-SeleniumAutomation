@@ -23,6 +23,7 @@ public class AdminLogin {
 		private By continueButton= By.xpath("//button[text()=' Continue ']");
 		private By backLink= By.xpath("//a[@class='d-block text-info font-14 font-bold mb-3']");
 		private By passwordField= By.id("login-password");
+		private By otpField= By.id("login-otp");
 		private By eyeIcon= By.cssSelector("div.input-group-addon"); 
 		private By forgotPassword= By.cssSelector("a[href*='forgot']");	
 		private By loginButton= By.xpath("//button[text()=' Log In ']");
@@ -38,6 +39,10 @@ public class AdminLogin {
 		
 		public WebElement getRememberMeCheckbox() {
 			return driver.findElement(rememberMeCheckbox);
+		}
+		
+		public WebElement getOtpField() {
+			return driver.findElement(otpField);
 		}
 		
 		public WebElement getBacktoLoginLink() {
@@ -63,7 +68,7 @@ public class AdminLogin {
 		public WebElement getPromptMessage() {
 			@SuppressWarnings("deprecation")
 			WebDriverWait wait = new WebDriverWait(driver,15) ;
-			wait.until(ExpectedConditions.elementToBeClickable(PromptMessage));
+			wait.until(ExpectedConditions.visibilityOfElementLocated(PromptMessage));
 			return driver.findElement(PromptMessage);
 		}
 		

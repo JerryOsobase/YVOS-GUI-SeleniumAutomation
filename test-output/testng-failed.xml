@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="listeners.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Testing Operator Portal(failed)">
     <classes>
-      <class name="admin.Test1">
+      <class name="admin.UsersTest">
         <methods>
-          <include name="sjfie"/>
+          <include name="ValidateDeactivateUser"/>
+          <include name="ValidateReactivateUser"/>
+          <include name="ValidateUserSearch" invocation-numbers="0 1"/>
+          <include name="ValidateInvitedUserStatus"/>
+          <include name="initialize"/>
+          <include name="terminate"/>
+          <include name="SuccessfulUserInvite" invocation-numbers="0"/>
         </methods>
-      </class> <!-- admin.Test1 -->
+      </class> <!-- admin.UsersTest -->
+      <class name="operator.IdentityTest">
+        <methods>
+          <include name="terminate"/>
+          <include name="ValidateIdentityPage" invocation-numbers="0"/>
+          <include name="initialize"/>
+          <include name="ValidateServiceDownLGAFilter" invocation-numbers="0"/>
+          <include name="ValidateServiceDownStatusField"/>
+          <include name="ValidateIdentityListHeader"/>
+          <include name="ValidateClearServiceDownList"/>
+        </methods>
+      </class> <!-- operator.IdentityTest -->
+      <class name="operator.CouponTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="ValidateSingleCouponFilter"/>
+          <include name="terminate"/>
+          <include name="SuccessfulMultipleCouponRequestOnline"/>
+          <include name="ValidateClearSingleList"/>
+          <include name="ValidateGeneratedCouponList"/>
+          <include name="ValidateClearMultipleList"/>
+          <include name="SuccessfulSingleCouponRequestOnline"/>
+          <include name="ValidateMultipleCouponFilter"/>
+        </methods>
+      </class> <!-- operator.CouponTest -->
+      <class name="operator.AdminLoginTest">
+        <methods>
+          <include name="ValidEmailAddress" invocation-numbers="0"/>
+          <include name="initialize"/>
+          <include name="terminate"/>
+          <include name="ValidateLogout"/>
+          <include name="ValidateSuccessfulAdminLogin"/>
+        </methods>
+      </class> <!-- operator.AdminLoginTest -->
+      <class name="operator.ProfileTest">
+        <methods>
+          <include name="initialize"/>
+          <include name="InvalidCurrentPassword" invocation-numbers="0 1"/>
+          <include name="ValidateLastNameEdit"/>
+          <include name="ValidateNewPasswordMatch" invocation-numbers="0"/>
+          <include name="ValidateProfileInformation"/>
+          <include name="ValidateConFirmPasswordField"/>
+          <include name="ValidateProfilePage" invocation-numbers="0"/>
+          <include name="ValidateProfileImageUpload"/>
+          <include name="ValidatePasswordTips"/>
+          <include name="EmptyCurrentPasswordField"/>
+          <include name="ValidateFirstNameEdit"/>
+          <include name="ValidatePhoneNumberEdit"/>
+          <include name="terminate"/>
+        </methods>
+      </class> <!-- operator.ProfileTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Testing Operator Portal(failed) -->
+</suite> <!-- Failed suite [Suite] -->

@@ -46,9 +46,21 @@
        <class name="admin.ReportTest"/> 
        <class name="admin.SettingsTest"/> 
        <class name="admin.UsersTest"/> 
+     
+     </classes>
+  </test> <!-- Test -->
+  
+  <test name="Testing Operator Portal" preserve-order="true">
+    <classes>
+     <class name="operator.AdminLoginTest"/> 
+   <class name="operator.CouponTest"/>
+	      <class name="operator.ProfileTest"/>
+	       <class name="operator.IdentityTest"/> 
+       <class name="admin.SettingsTest"/> 
+       <class name="admin.UsersTest"/> 
        
       
      
      </classes>
-  </test> <!-- Test -->
+  </test>
 </suite> <!-- Suite -->

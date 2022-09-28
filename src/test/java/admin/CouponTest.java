@@ -44,7 +44,7 @@ public class CouponTest extends base {
 	}
 	
 	@Test(priority=1, dataProvider="mergedData", dataProviderClass=AdminLoginTest.class)
-	public void ValidateCouponPage(HashMap<String, String> data) {
+	public void ValidateCouponPage(HashMap<String, String> data) throws InterruptedException {
 	//Verify user is taken to the coupon page
 		alt = new AdminLoginTest();
 		alt.ValidateSuccessfulAdminLogin1(driver, data);

@@ -3,11 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="admin.Test1">
+      <class name="operator.AdminLoginTest">
         <methods>
-          <include name="sjfie"/>
+          <include name="InvalidEmailAddressNotFound" invocation-numbers="0 1"/>
+          <include name="ValidEmailAddress" invocation-numbers="0"/>
+          <include name="initialize"/>
+          <include name="terminate"/>
+          <include name="ValidateLogout"/>
+          <include name="ValidateSuccessfulAdminLogin" invocation-numbers="0"/>
         </methods>
-      </class> <!-- admin.Test1 -->
+      </class> <!-- operator.AdminLoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

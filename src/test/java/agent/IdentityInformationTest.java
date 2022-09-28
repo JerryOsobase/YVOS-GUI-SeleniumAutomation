@@ -219,12 +219,12 @@ public class IdentityInformationTest extends base{
 	public  Object[][] validGetData() {
 		Object[][] data1=new Object[2][];
 		Map<String, String> validData = Map.of("validNIN", "01928390948","validBVN",
-				"29093990030","validDriverLicense", "Fp9433k40A13");
+				"12345643453","validDriverLicense", "Fp9433k40A13");
 		Map <String, String> dp1= new HashMap <>(validData);
 		
 		data1[0]= new Object[] { dp1 };
 		Map<String, String> validData1 = Map.of("validNIN", "01928390900","validBVN",
-				"29113990030","validDriverLicense", "Fp3369k40A30");
+				"12345643020","validDriverLicense", "Fp3369k40A30");
 		Map <String, String> dp4= new HashMap <>(validData1);
 		
 		data1[1]= new Object[] { dp4 };
