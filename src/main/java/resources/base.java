@@ -3,6 +3,8 @@ package resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.sql.Driver;
+import java.util.Optional;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,6 +14,13 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.devtools.DevTools;
+import org.openqa.selenium.devtools.v107.fetch.model.AuthChallengeResponse;
+import org.openqa.selenium.devtools.v107.network.Network;
+import org.openqa.selenium.devtools.v107.network.model.Request;
+import org.openqa.selenium.devtools.v107.network.model.RequestId;
+import org.openqa.selenium.devtools.v107.network.model.Response;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class base {
 	
@@ -25,17 +34,18 @@ public class base {
 				+ "main//java//resources//data.properties");
 		prop.load(fis);
 		String BrowserName= prop.getProperty("browser");
-		System.out.println(BrowserName);
 		if(BrowserName.equals("chrome")) {
 			// TODO Auto-generated method stub
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("use-fake-ui-for-media-stream");
 			System.setProperty("webdriver.chrome.driver", "//Users//jerryosobase//Applications//chromedriver");
 			driver=new ChromeDriver(options);
+
 		}
 		
 		else if(BrowserName.equals("firefox")) {
 			//execute firefox system properties
+			
 		}
 		
 		else if(BrowserName.equals("IE")) {
@@ -47,6 +57,9 @@ public class base {
 		
 			
 	}
+
+
+
 	public String getScreenshot(String TestCaseName, WebDriver driver) throws IOException {
 		TakesScreenshot ts=(TakesScreenshot)driver;
 		File source= ts.getScreenshotAs(OutputType.FILE);
@@ -54,5 +67,7 @@ public class base {
 		FileUtils.copyFile(source, new File(DestinationName));
 		return DestinationName;
 	}
+
+
 	}
 

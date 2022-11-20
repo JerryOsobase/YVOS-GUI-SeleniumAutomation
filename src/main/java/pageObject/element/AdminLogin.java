@@ -1,24 +1,13 @@
 package pageObject.element;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+public class AdminLogin extends Login{
 
 
-public class AdminLogin {
-
-	public WebDriver driver;
-		
-		public AdminLogin(WebDriver driver) {
-			// TODO Auto-generated constructor stub
-			this.driver=driver;
-		}
-
-		private By emailAddressField= By.id("");
-		
-				
-		public WebElement getEmailAddressField() {
-			return driver.findElement(emailAddressField);
-		}
-		
-		}
+    public AdminLogin(WebDriver driver) {
+        super(driver);
+        setEmail("jerry@youverify.co");
+        setPassword("Base4jerry@");
+    }
+}
