@@ -30,6 +30,7 @@ public class AdminLoginTest extends base{
 		
 		@Test
 		public void test() throws InterruptedException {
+			System.out.println("hello world");
 		}
 		
 		
@@ -37,7 +38,7 @@ public class AdminLoginTest extends base{
 		
 		@AfterClass
 		public void terminate() {
-		//driver.close();
+		driver.close();
 		}
 	}
 
