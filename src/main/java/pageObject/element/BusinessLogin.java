@@ -3,12 +3,21 @@ package pageObject.element;
 import org.openqa.selenium.WebDriver;
 import resources.base;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 public class BusinessLogin extends Login{
 
-
-    public BusinessLogin(WebDriver driver) {
+public Properties prop;
+    public BusinessLogin(WebDriver driver) throws IOException {
         super(driver);
-        setEmail("jerryosobase4+001@gmail.com");
-        setPassword("Osobase4@");
+        prop = new Properties();
+        FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//src//"
+                + "main//java//resources//data.properties");
+        prop.load(fis);
+        setEmail(prop.getProperty("businessEmail"));
+        setPassword(prop.getProperty("businessPassword"));
     }
 }

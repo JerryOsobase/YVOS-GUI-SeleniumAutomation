@@ -8,19 +8,13 @@ import java.util.Optional;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v107.fetch.model.AuthChallengeResponse;
-import org.openqa.selenium.devtools.v107.network.Network;
-import org.openqa.selenium.devtools.v107.network.model.Request;
-import org.openqa.selenium.devtools.v107.network.model.RequestId;
-import org.openqa.selenium.devtools.v107.network.model.Response;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class base {
 	
@@ -38,7 +32,7 @@ public class base {
 			// TODO Auto-generated method stub
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("use-fake-ui-for-media-stream");
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"//driver/chromedriver");
+			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver(options);
 
 		}

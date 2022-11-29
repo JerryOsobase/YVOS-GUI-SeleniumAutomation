@@ -9,11 +9,11 @@ public class extentReporter {
 		String path =System.getProperty("user.dir")+"//reports//index.html";
 		ExtentSparkReporter spark=new ExtentSparkReporter(path);
 		spark.config().setDocumentTitle("Document title");
-		spark.config().setReportName("Report name");
+		spark.config().setReportName("Yvos Gui Automation Report");
 		
 		ext=new ExtentReports();
 		ext.attachReporter(spark);
-		ext.setSystemInfo("Tester", "Jerry osobase");
+		ext.setSystemInfo("Tester", "Jerry & Rotimi");
 		return ext;
 	}
 }

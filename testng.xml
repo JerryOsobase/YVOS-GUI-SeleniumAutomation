@@ -5,5 +5,16 @@
 <listeners>
 <listener class-name="listeners.Listeners"/>
 </listeners>
+    <test name="Testing Admin Portal" preserve-order="true">
+    <classes>
+    <class name="admin.LoginTest"/>
+    </classes>
+    </test>
+
+    <test name="Testing Agent Portal" preserve-order="true">
+        <classes>
+            <class name="business.LoginTest"/>
+        </classes>
+    </test>
 
 </suite> <!-- Suite -->
