@@ -1,6 +1,6 @@
 package business;
 
-import initiator.loginClass;
+import initiator.LoginClass;
 import initiator.testScenarios.login;
 import listeners.Parameters;
 import org.testng.annotations.AfterClass;
@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class LoginTest extends loginClass implements login {
+public class LoginTest extends LoginClass implements login {
 
 	@BeforeClass
 	public void initialize() throws IOException {
@@ -41,7 +41,7 @@ public class LoginTest extends loginClass implements login {
 	@Test(priority=4)
 	@Override
 	public void validLoginTest() throws IOException {
-		login();
+		validLogin();
 	}
 
 	@AfterClass

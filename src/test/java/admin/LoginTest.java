@@ -3,14 +3,14 @@ package admin;
 import java.io.IOException;
 import java.util.HashMap;
 
-import initiator.loginClass;
+import initiator.LoginClass;
 import initiator.testScenarios.login;
 import listeners.Parameters;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class LoginTest extends loginClass implements login {
+public class LoginTest extends LoginClass implements login {
 
 
 		@BeforeClass
@@ -44,7 +44,7 @@ public class LoginTest extends loginClass implements login {
 	@Test(priority=4)
 	@Override
 	public void validLoginTest() throws IOException {
-		login();
+		validLogin();
 	}
 
 	@AfterClass

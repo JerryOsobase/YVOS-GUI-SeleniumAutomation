@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.sql.Driver;
+import java.time.Duration;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +21,11 @@ public class base {
 	
 	public WebDriver driver;
 	public Properties prop;
+
+	private int timeOut = 10;
+	public Duration durationInSeconds = Duration.ofSeconds(timeOut);
+
+	public String packageName = this.getClass().getPackageName();
 
 	@SuppressWarnings("deprecation")
 	public WebDriver InitializeBrowser() throws IOException {

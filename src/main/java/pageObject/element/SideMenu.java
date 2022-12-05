@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class SideMenu {
 
     WebDriver driver;
@@ -29,12 +31,18 @@ public class SideMenu {
     private By settings = By.cssSelector("a[href*='/settings']");
     private By auditLog = By.cssSelector("div[class*='flex-1 overflow-auto'] a[href*='/audit-log']");
 
+    private By sideMenuList = By.xpath("//ul //li");
+
     public WebElement getStarted(){
         return driver.findElement(getStarted);
     }
 
     public WebElement getVForms(){
         return driver.findElement(vForms);
+    }
+
+    public List<WebElement> getSideMenuList(){
+        return driver.findElements(sideMenuList);
     }
 
     public WebElement getSdk(){

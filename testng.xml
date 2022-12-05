@@ -8,12 +8,16 @@
     <test name="Testing Admin Portal" preserve-order="true">
     <classes>
     <class name="admin.LoginTest"/>
+        <class name="admin.SideMenuTest"></class>
+        <class name="admin.GetStartedTest"></class>
     </classes>
     </test>
 
-    <test name="Testing Agent Portal" preserve-order="true">
+    <test name="Testing Business Portal" preserve-order="true">
         <classes>
             <class name="business.LoginTest"/>
+            <class name="business.SideMenuTest"></class>
+            <class name="business.GetStartedTest"></class>
         </classes>
     </test>
 

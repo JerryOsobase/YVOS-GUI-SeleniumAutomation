@@ -37,6 +37,9 @@ public class Login {
 	private By backButton = By.cssSelector("#__layout > div > div.flex-1.px-6.py-10.overflow-y-auto.order-last.md\\:order-first > div > div >" +
 			" div > div:nth-child(2) > span > div:nth-child(1) > button");
 
+	private By fieldErrorMessage = By.cssSelector("div[class*='text-red']");
+
+
 		public String getEmail(){
 			return email;
 		}
@@ -56,6 +59,10 @@ public class Login {
 		public WebElement getEmailAddressField() {
 			 return driver.findElement(emailAddressField);
 		}
+
+	public WebElement getFieldErrorMessage() {
+		return driver.findElement(fieldErrorMessage);
+	}
 
 	public WebElement getPopUpMessage() {
 		wait = new WebDriverWait(driver, durationInSeconds);
