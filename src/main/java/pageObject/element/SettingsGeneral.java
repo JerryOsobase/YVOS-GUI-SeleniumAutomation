@@ -3,16 +3,13 @@ package pageObject.element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import resources.base;
 
 import java.util.List;
 
-public class SettingsGeneral {
-
-    WebDriver driver;
-
-    public SettingsGeneral(WebDriver driver){
-        this.driver=driver;
-    }
+public class SettingsGeneral extends base {
 
     private By generalTab = By.cssSelector("div[id='content'] a[href='/settings']");
     private By editButton = By.xpath("//div[@class='border-b border-gray-75'] //button");
@@ -43,13 +40,33 @@ public class SettingsGeneral {
     private By cancelButton= By.cssSelector("#content > div > div.mt-4.min-h-full.bg-white.rounded > div:nth-child(2) > div.fixed.flex.items-center.justify-center.inset-0 > div.flex.flex-col.bg-white.w-4\\/12.rounded.overflow-hidden > div.flex-1.flex.flex-col.overflow-hidden > div.flex.justify-end.px-6.pb-6.pt-4.border-t.border-gray-75 > div > button.uppercase.bg-gray-75.text-black-300.ring-gray-75.font-medium.py-2.px-4.text-sm.focus\\" +
             ":ring.rounded.shadow-none.focus\\:outline-none.flex-shrink-0.text-center.ring-opacity-50.relative");
 
+    private By sectionHeader = By.cssSelector("div[class*='section-title']");
+
+    private By informationLabel = By.cssSelector("div[class*='flex-1'] div[class*='text-black-300']");
+
+    private By infoTitle = By.cssSelector("div[class*='flex-2'] div[class*='flex-1']");
+
 
     public WebElement getGeneralTab(){
         return driver.findElement(generalTab);
     }
 
+    public List<WebElement> getInfoTitle(){
+        return driver.findElements(infoTitle);
+    }
+
     public List<WebElement> getEditButton(){
+        wait = new WebDriverWait(driver, durationInSeconds);
+        wait.until(ExpectedConditions.elementToBeClickable(editButton));
         return driver.findElements(editButton);
+    }
+
+    public List<WebElement> getInformationLabel(){
+        return driver.findElements(informationLabel);
+    }
+
+    public List<WebElement> getSectionHeader(){
+        return driver.findElements(sectionHeader);
     }
 
     public WebElement getTradingNameField(){

@@ -14,9 +14,7 @@ public class LoginTest extends LoginClass implements login {
 
 	@BeforeClass
 	public void initialize() throws IOException {
-		driver= InitializeBrowser();
-		driver.get(prop.getProperty("url"));
-		driver.manage().window().maximize();
+		InitializeBrowser();
 
 	}
 

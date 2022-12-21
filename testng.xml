@@ -7,9 +7,11 @@
 </listeners>
     <test name="Testing Admin Portal" preserve-order="true">
     <classes>
-    <class name="admin.LoginTest"/>
+        <class name="admin.LoginTest"/>
         <class name="admin.SideMenuTest"></class>
         <class name="admin.GetStartedTest"></class>
+        <class name="admin.AuditLogTest"></class>
+        <class name="admin.SettingTest"></class>
     </classes>
     </test>
 
@@ -18,6 +20,8 @@
             <class name="business.LoginTest"/>
             <class name="business.SideMenuTest"></class>
             <class name="business.GetStartedTest"></class>
+            <class name="business.AuditLogTest"></class>
+            <class name="business.SettingTest"></class>
         </classes>
     </test>
 

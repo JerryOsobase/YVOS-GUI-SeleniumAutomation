@@ -11,21 +11,27 @@ import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class base {
 	
-	public WebDriver driver;
+	public static WebDriver driver;
 	public Properties prop;
 
-	private int timeOut = 10;
-	public Duration durationInSeconds = Duration.ofSeconds(timeOut);
+	private static int timeOut = 10;
+	public static Duration durationInSeconds = Duration.ofSeconds(timeOut);
+
+	public static WebDriverWait wait;
 
 	public String packageName = this.getClass().getPackageName();
+
+	public static JavascriptExecutor executor;
 
 	@SuppressWarnings("deprecation")
 	public WebDriver InitializeBrowser() throws IOException {
@@ -51,11 +57,13 @@ public class base {
 		else if(BrowserName.equals("IE")) {
 			//execute internet explorer system properties
 		}
-		
-		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-		return driver;
-		
-			
+
+		driver.get(prop.getProperty("url"));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+
+
+		return null;
 	}
 
 

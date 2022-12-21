@@ -27,7 +27,7 @@ public class GetStartedClass extends LoginClass {
     Identity identity;
 
     public void validateGetStartedPage() throws IOException {
-        getStarted = new GetStarted(driver);
+        getStarted = new GetStarted();
         softAssert = new SoftAssert();
         softAssert.assertEquals(getStarted.getPageHeader().getText(), "Get Started");
         List<String> originalModalTitleList = getStarted.getModalTitle().stream().map(v->v.getText()).collect(Collectors.toList());
@@ -45,8 +45,8 @@ public class GetStartedClass extends LoginClass {
     }
 
     public void validateManageBusinessModule() {
-        getStarted = new GetStarted(driver);
-        settingsGeneral = new SettingsGeneral(driver);
+        getStarted = new GetStarted();
+        settingsGeneral = new SettingsGeneral();
         for(int q=0; q<getStarted.getModalTitle().size(); q++){
             if(getStarted.getModalTitle().get(q).getText().contains("Manage Business")){
                 getStarted.getLetGoLink().get(q).click();
@@ -57,9 +57,9 @@ public class GetStartedClass extends LoginClass {
     }
 
     public void validateKnowledgeBaseModule(){
-        getStarted = new GetStarted(driver);
-        settingsGeneral = new SettingsGeneral(driver);
-        frontDesk = new FrontDesk(driver);
+        getStarted = new GetStarted();
+        settingsGeneral = new SettingsGeneral();
+        frontDesk = new FrontDesk();
         for(int q=0; q<getStarted.getModalTitle().size(); q++){
             if(getStarted.getModalTitle().get(q).getText().contains("Knowledge Base")){
                 getStarted.getLetGoLink().get(q).click();
@@ -77,9 +77,9 @@ public class GetStartedClass extends LoginClass {
     }
 
     public void validateFaqModule(){
-        getStarted = new GetStarted(driver);
-        settingsGeneral = new SettingsGeneral(driver);
-        frontDesk = new FrontDesk(driver);
+        getStarted = new GetStarted();
+        settingsGeneral = new SettingsGeneral();
+        frontDesk = new FrontDesk();
         for(int q=0; q<getStarted.getModalTitle().size(); q++){
             if(getStarted.getModalTitle().get(q).getText().contains("FAQs")){
                 getStarted.getLetGoLink().get(q).click();
@@ -97,8 +97,8 @@ public class GetStartedClass extends LoginClass {
     }
 
     public void validateVerificationRequestModule(){
-        getStarted = new GetStarted(driver);
-        identity = new Identity(driver);
+        getStarted = new GetStarted();
+        identity = new Identity();
         softAssert = new SoftAssert();
         getStarted.getLetGoButton().click();
         softAssert.assertTrue(identity.getIdentityCheckButton().isDisplayed());

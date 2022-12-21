@@ -3,16 +3,13 @@ package pageObject.element;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import resources.base;
 
 import java.util.List;
 
-public class SideMenu {
-
-    WebDriver driver;
-
-    public SideMenu(WebDriver driver){
-        this.driver=driver;
-    }
+public class SideMenu extends base {
 
     private By getStarted = By.cssSelector("a[href*='/get-started']");
     private By vForms = By.cssSelector("div[class*='flex-1 overflow-auto'] a[href='/v-forms']");
@@ -90,10 +87,15 @@ public class SideMenu {
     }
 
     public WebElement getSettings(){
+        wait = new WebDriverWait(driver, durationInSeconds);
+        wait.until(ExpectedConditions.elementToBeClickable(settings));
         return driver.findElement(settings);
     }
 
     public WebElement getAuditLog(){
+        wait = new WebDriverWait(driver, durationInSeconds);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(auditLog));
+        wait.until(ExpectedConditions.elementToBeClickable(auditLog));
         return driver.findElement(auditLog);
     }
 

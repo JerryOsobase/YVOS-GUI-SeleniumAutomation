@@ -11,12 +11,6 @@ import java.util.List;
 
 public class GetStarted extends base {
 
-    WebDriver driver;
-
-    public GetStarted(WebDriver driver){
-        this.driver=driver;
-    }
-
     private By pageHeader = By.cssSelector("div[class*='text-xl']");
 
     private By modalTitle = By.cssSelector("div[class*='mt-6 card'] h2");

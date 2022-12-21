@@ -11,10 +11,10 @@ public class Parameters {
     @DataProvider
     public Object[][] validData(){
         Object[][] data = new Object [2][];
-        Map<String, String> validData = Map.of("","");
+        Map<String, String> validData = Map.of("event","view", "resource", "address");
         Map<String, String> dp1 = new HashMap<>(validData);
 
-        Map<String, String> validData1 = Map.of("", "");
+        Map<String, String> validData1 = Map.of("event", "start", "resource", "vform");
         Map<String, String> dp2 = new HashMap<>(validData1);
 
         data[0] = new Object[] {dp1};

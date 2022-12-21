@@ -12,9 +12,7 @@ public class SideMenuTest extends SideMenuClass implements sideMenu {
 
     @BeforeClass
     public void initialize() throws IOException {
-        driver= InitializeBrowser();
-        driver.get(prop.getProperty("url"));
-        driver.manage().window().maximize();
+        InitializeBrowser();
         login();
 
     }

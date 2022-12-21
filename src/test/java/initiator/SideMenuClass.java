@@ -3,7 +3,6 @@ package initiator;
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import pageObject.element.SideMenu;
-import resources.base;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -15,7 +14,7 @@ public class SideMenuClass extends LoginClass {
     SideMenu sideMenu;
     public void getSideMenuList() throws IOException {
         JavascriptExecutor executor = (JavascriptExecutor) driver;
-        sideMenu = new SideMenu(driver);
+        sideMenu = new SideMenu();
         executor.executeScript("arguments[0].click();", sideMenu.getSdk());
         executor.executeScript("arguments[0].click();", sideMenu.getVerification());
         List<String> originalSideMenuList = sideMenu.getSideMenuList().stream().map(v->v.getText()).collect(Collectors.toList());

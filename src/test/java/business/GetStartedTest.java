@@ -15,15 +15,13 @@ public class GetStartedTest extends GetStartedClass implements getStarted {
     SideMenu sideMenu;
     @BeforeClass
     public void initialize() throws IOException {
-        driver= InitializeBrowser();
-        driver.get(prop.getProperty("url"));
-        driver.manage().window().maximize();
+        InitializeBrowser();
         login();
     }
 
     @BeforeMethod
     public void pageNavigation(){
-        sideMenu = new SideMenu(driver);
+        sideMenu = new SideMenu();
         sideMenu.getStarted().click();
     }
 

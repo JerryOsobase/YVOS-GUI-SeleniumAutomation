@@ -1,18 +1,14 @@
 package pageObject.element;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import resources.base;
 
 import java.util.List;
 
-public class SettingsProfile {
-
-    WebDriver driver;
-
-    public SettingsProfile(WebDriver driver){
-        this.driver=driver;
-    }
+public class SettingsProfile extends base {
 
     private By profileTab = By.cssSelector("a[href*='settings/profile']");
     private By resetPasswordButton = By.xpath("//button/span[contains(text(),'Reset Password')]");
@@ -49,13 +45,29 @@ public class SettingsProfile {
             "opacity-50.relative");
     private By activitiesTableHeader= By.xpath("//tr/th");
 
+    private By userInfoLabel = By.xpath("//div[@class='flex-1 p-6 space-y-6'] //label/span");
+
+    private By pageHeader = By.cssSelector("div[class*='flex items-center'] div[class*='text-base']");
+
+
+
 
     public WebElement getProfileTab() {
+        wait = new WebDriverWait(driver, durationInSeconds);
+        wait.until(ExpectedConditions.elementToBeClickable(profileTab));
         return driver.findElement(profileTab);
+    }
+
+    public WebElement getPageHeader() {
+        return driver.findElement(pageHeader);
     }
 
     public WebElement getResetPasswordButton() {
         return driver.findElement(resetPasswordButton);
+    }
+
+    public List<WebElement> getUserInfoLabel() {
+        return driver.findElements(userInfoLabel);
     }
 
     public WebElement getDeactivate2faButton() {

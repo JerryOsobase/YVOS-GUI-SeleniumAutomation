@@ -11,8 +11,7 @@ import java.util.Properties;
 public class BusinessLogin extends Login{
 
 public Properties prop;
-    public BusinessLogin(WebDriver driver) throws IOException {
-        super(driver);
+    public BusinessLogin() throws IOException {
         prop = new Properties();
         FileInputStream fis=new FileInputStream(System.getProperty("user.dir")+"//src//"
                 + "main//java//resources//data.properties");
